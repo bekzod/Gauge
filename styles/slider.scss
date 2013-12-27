@@ -22,11 +22,12 @@
         &>.dot {
             cursor:pointer;
             background:url('../img/indicator.png') no-repeat;
-            width: 20px;
-            height: 20px;
+            width: 15px;
+            height: 15px;
+            margin-left: 3px;
             float: left;
             &.filled {
-                background:url('../img/indicator.png') -20px 0px no-repeat;
+                background:url('../img/indicator.png') -15px 0px no-repeat;
             }
         }
     }
