@@ -1,0 +1,145 @@
+.circleGauge {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    float: left;
+    display: block;
+    background-color: #FAFAFA;
+    @include border-radius(50%);
+    @include background(linear-gradient(bottom, #cbd8da, #ffffff));
+
+    &.small {
+        width: 90px !important;
+        height: 90px !important;
+        &>.innerCircle>.innerText{
+            font-size: 23px;
+            margin-top: -12px;
+        }
+    }
+
+
+    &.green {
+        &>.arc {
+            background-color: #6ca719;
+        }
+        &>.innerCircle>.innerText{
+            color: #5a8e22;
+        }
+    }
+
+    &.orange {
+        &>.arc {
+            background-color: #fe9c14;
+        }
+        &>.innerCircle>.innerText{
+            color: #de8d1c;
+        }
+    }
+
+    &.red {
+        &>.arc {
+            background-color: #fe5534;
+        }
+        &>.innerCircle>.innerText{
+            color: #df4a2d;
+        }
+    }
+
+    &>.innerBorderCircle{
+        top: 0;
+        bottom: 0;
+        margin: 5% 0 0 5%;
+        position: absolute;
+        width: 90%;
+        height: 90%;
+        z-index: 100;
+        background-color: white;
+        @include border-radius(50%);
+    }
+
+    &>.shadowCircle{
+        top: 0;
+        bottom: 0;
+        margin: 10% 0 0 10%;
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        z-index: 200;
+        @include border-radius(50%);
+        @include box-shadow(
+            0px 0px 8px #666
+        );
+    }
+
+    &>.innerShadowCircle{
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 300;
+        width: 90%;
+        height: 90%;
+        margin: 5% 0 0 5%;
+        background: transparent;
+        @include border-radius(50%);
+        @include box-shadow(
+            0px 0px 8px #666 inset
+        );
+    }
+
+    &>.innerCircle{
+        top: 0;
+        bottom: 0;
+        width: 75%;
+        height: 75%;
+        z-index: 400;
+        position: absolute;
+        margin: 12.5% 0 0 12.5%;
+        background-color: white;
+        @include border-radius(50%);
+        @include background(linear-gradient(bottom, #cbd8da, #ffffff));
+        @include box-shadow(
+            1px 1px 1px 1px #FFFFFF inset,
+            -2px -2px 2px 1px #b8bcbb inset
+        );
+
+
+        &>.innerText{
+            position: relative;
+            text-align: center;
+            z-index: 500;
+            top: 50%;
+            margin-top: -20px;
+            font-size: 38px;
+            color: #CA0AFA;
+            font-weight: 100;
+        }
+    }
+
+    &>.arc {
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 45%;
+        height: 90%;
+        margin: 5% 0 0 5%;
+        z-index: 100;
+        background-color: #CA0AFA;
+        -webkit-transform-origin: 100% 50%;
+        -moz-transform-origin: 100% 50%;
+        -ms-transform-origin: 100% 50%;
+        -o-transform-origin: 100% 50%;
+        transform-origin: 100% 50%;
+        @include transform( rotate( 0deg) );
+        @include border-radius( 90px 0 0 90px );
+        @include single-transition(rotate, .5s, ease-in-out);
+    }
+
+    &>.rotated {
+        @include transform( rotate( 180deg) );
+    }
+
+    &>.mask{
+        z-index: 200;
+        background-color: #DFDFDF !important;
+    }
+}

@@ -1,0 +1,33 @@
+@import "compass";
+
+.mega_slider {
+    overflow: hidden;
+    position: relative;
+    &>ul {
+        position: relative;
+        margin:0;
+        padding: 0;
+        list-style: none;
+        &>li {
+            float:left;
+            display: block;
+        }
+    }
+
+    &>.indicator{
+        bottom: 0;
+        left: 50%;
+        position: absolute;
+        z-index: 300;
+        &>.dot {
+            cursor:pointer;
+            background:url('../img/indicator.png') no-repeat;
+            width: 20px;
+            height: 20px;
+            float: left;
+            &.filled {
+                background:url('../img/indicator.png') -20px 0px no-repeat;
+            }
+        }
+    }
+}
