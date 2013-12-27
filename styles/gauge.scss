@@ -24,13 +24,13 @@
             background-color: #53e916;
         }
         &>.innerCircle>.innerText{
-            color: #3ebe0a;
+            color: #47c116;
         }
     }
 
     &.orange {
         &>.arc {
-            background-color: #fe9c14;
+            background-color: #ff8d13;
         }
         &>.innerCircle>.innerText{
             color: #de8d1c;
@@ -39,10 +39,10 @@
 
     &.red {
         &>.arc {
-            background-color: #ef3421;
+            background-color: #ff003c;
         }
         &>.innerCircle>.innerText{
-            color: #ef3421;
+            color: #cd0f3c;
         }
     }
 
@@ -139,6 +139,9 @@
     }
 
     &>.mask{
+        width: 45.5%;
+        height: 91%;
+        margin: 4.5% 0 0 4.5%;
         z-index: 200;
         background-color: #DFDFDF !important;
     }

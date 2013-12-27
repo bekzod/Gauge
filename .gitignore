@@ -2,3 +2,5 @@ node_modules
 components
 .sass-cache
 .tmp
+.tmp/
+.tmp/styles

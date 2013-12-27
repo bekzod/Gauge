@@ -1,6 +1,6 @@
 
 $(function () {
 
-    $('.slider-view-port').mega_slider({timeOut:10000});
+    $('.slider-view-port').mega_slider({timeOut:0});
 
 });

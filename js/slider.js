@@ -69,7 +69,7 @@ $(function () {
         },
 
         onIndicatorClick: function(e){
-            this.resetTimeOut();
+            if( this.timeOutId ) this.resetTimeOut();
             this.changeSlideTo( $(e.target).index() );
         },
 
