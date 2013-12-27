@@ -12,13 +12,13 @@
 
 .slider-view-port {
     width: 100%;
-    height: 75%;
+    height: 70%;
 }
 
 
 .feedbackContainer {
     width: 100%;
-    height: 240px;
+    height: 250px;
     border: 1px solid #CCC;
     @include border-radius(3px);
     @include box-shadow(
@@ -26,28 +26,29 @@
     );
 
     .subContainer {
-        width: 220px;
+        width: 230px;
+        height: 100%;
         float: left;
-        padding: 8px 14px;
+        padding: 0px 10px 0px 9px;
         border-right: 1px dashed #CCC;
 
         &.fixedWidth {
-            width: 180px;
+            width: 230px !important;
             border: none;
         }
 
         &>h3{
             text-align: center;
-            line-height: 1;
+            line-height: 1.3;
             font-weight: 200;
             color: #666;
         }
 
         &>.bigGaugeContainer{
             &>.gauge{
-                margin: 0 auto;
-                width: 150px;
-                height: 150px;
+                margin: 10px auto;
+                width: 140px;
+                height: 140px;
             }
 
             &>.description{
@@ -70,7 +71,7 @@
             width: 90px;
             float: left;
             text-align: center;
-            margin-left: 15px;
+            margin-left: 20px;
 
             .gauge{
                 width: 90px;
