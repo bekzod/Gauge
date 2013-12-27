@@ -6,7 +6,8 @@
     display: block;
     background-color: #FAFAFA;
     @include border-radius(50%);
-    @include background(linear-gradient(bottom, #cbd8da, #ffffff));
+    @include background(linear-gradient(bottom, #c4d1d3, #f8fbfb));
+
 
     &.small {
         width: 90px !important;
@@ -20,10 +21,10 @@
 
     &.green {
         &>.arc {
-            background-color: #6ca719;
+            background-color: #53e916;
         }
         &>.innerCircle>.innerText{
-            color: #5a8e22;
+            color: #3ebe0a;
         }
     }
 
@@ -38,10 +39,10 @@
 
     &.red {
         &>.arc {
-            background-color: #fe5534;
+            background-color: #ef3421;
         }
         &>.innerCircle>.innerText{
-            color: #df4a2d;
+            color: #ef3421;
         }
     }
 
@@ -82,7 +83,7 @@
         background: transparent;
         @include border-radius(50%);
         @include box-shadow(
-            0px 0px 8px #666 inset
+            0px 0px 7px #666 inset
         );
     }
 
@@ -96,10 +97,9 @@
         margin: 12.5% 0 0 12.5%;
         background-color: white;
         @include border-radius(50%);
-        @include background(linear-gradient(bottom, #cbd8da, #ffffff));
+        @include background(linear-gradient(bottom, #c4d1d3, #f8fbfb));
         @include box-shadow(
-            1px 1px 1px 1px #FFFFFF inset,
-            -2px -2px 2px 1px #b8bcbb inset
+            0px 0px 6px 0px #666
         );
 
 
@@ -108,8 +108,8 @@
             text-align: center;
             z-index: 500;
             top: 50%;
-            margin-top: -20px;
-            font-size: 38px;
+            margin-top: -22px;
+            font-size: 42px;
             color: #CA0AFA;
             font-weight: 100;
         }
