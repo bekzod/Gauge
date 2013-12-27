@@ -26,15 +26,13 @@
     );
 
     .subContainer {
-        width: 200px;
-        height: 100%;
+        width: 220px;
         float: left;
-        padding: 10px 30px;
+        padding: 8px 14px;
         border-right: 1px dashed #CCC;
 
         &.fixedWidth {
-            width: 140px;
-            float: right;
+            width: 180px;
             border: none;
         }
 

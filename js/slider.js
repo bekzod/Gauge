@@ -59,6 +59,7 @@ $(function () {
             while(count-->0){
                 this.$indicator.append( $('<div/>',{ class: 'dot' }) );
             }
+
             this.$indicator
                 .appendTo( this.$el )
                 .css('margin-left', - this.$indicator.width()/2);
@@ -69,11 +70,11 @@ $(function () {
 
         onIndicatorClick: function(e){
             this.resetTimeOut();
-            this.changeSlideTo($(e.target).index());
+            this.changeSlideTo( $(e.target).index() );
         },
 
         nextSlide: function () {
-            this.changeSlideTo(this.currentIndex + 1);
+            this.changeSlideTo( this.currentIndex + 1 );
         },
 
         changeSlideTo:function(index){
@@ -87,13 +88,16 @@ $(function () {
             }
 
             this.$list
-            .stop(true)
-            .animate({
-                'left': -(this.currentIndex * this.$el.width())
-            });
+                .stop(true)
+                .animate({
+                    'left': -(this.currentIndex * this.$el.width())
+                });
 
-            var dots = this.$indicator.find('.dot').removeClass('filled');
-            $( dots.get( this.currentIndex ) ).addClass('filled');
+            this.$indicator
+                .find('.dot')
+                .removeClass('filled')
+                .eq( this.currentIndex )
+                .addClass('filled');
         },
 
         prevSlide: function(){
