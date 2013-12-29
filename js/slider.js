@@ -55,7 +55,9 @@ $(function () {
         createIndicators:function(){
             this.$indicator = $('<div/>',{ class: 'indicator' })
                 .append( $('<div/>',{ class: 'dot filled' }) );
+            
             var count = this.$slides.length - 1;
+
             while(count-->0){
                 this.$indicator.append( $('<div/>',{ class: 'dot' }) );
             }
