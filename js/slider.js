@@ -6,9 +6,9 @@ $(function () {
     };
 
     function Plugin ( element, options ) {
-        this.$el = $(element);
-        this.$list = this.$el.find('ul');
-        this.$slides = this.$el.find('ul>li');
+        this.$el = $(element).wrapInner('<div class = "mega-slider"/>');
+        this.$slidesEl = this.$el.find('.mega-slide-element');
+        console.log(this.$slidesEl.eq(0).width());
 
         this.settings = $.extend( {}, defaults, options );
         this._defaults = defaults;
@@ -21,18 +21,30 @@ $(function () {
     Plugin.prototype = {
         init: function () {
             var self = this;
+            var viewportWidth = this.$el.width();
+            var currentSlideWidth = 0;
+            var slidesIndex = [];
 
-            this.$el.addClass('mega_slider');
+            this.$slidesEl.each( function(index, el){
+                var $el = $(el);
+                if( currentSlideWidth - $el.width() <= 0 ){
+                    currentSlideWidth = viewportWidth;
+                    slidesIndex.push([]);
+                }
+                currentSlideWidth -= $el.width();
+                slidesIndex[ slidesIndex.length - 1 ].push( index );
+            });
+
+            for (var i = slidesIndex.length - 1; i >= 0; i--) {
+                this.$slidesEl
+                    .filter( function(index,el){
+                        return $.inArray(index, slidesIndex[i]) > -1;
+                    })
+                    .wrapAll('<div class = "mega-slide" />');
+            }
+
+            this.$slides = this.$el.find('.mega-slide');
             this.createIndicators();
-
-            this.$slides.css({
-                width: this.$el.width(),
-                height: this.$el.height()
-            });
-
-            this.$list.css({
-                width: (this.$el.width() * this.$slides.length + 'px')
-            });
 
             if( this.settings.timeOut ){
                 this.resetTimeOut();
@@ -55,7 +67,7 @@ $(function () {
         createIndicators:function(){
             this.$indicator = $('<div/>',{ class: 'indicator' })
                 .append( $('<div/>',{ class: 'dot filled' }) );
-            
+
             var count = this.$slides.length - 1;
 
             while(count-->0){
@@ -64,9 +76,7 @@ $(function () {
 
             this.$indicator
                 .appendTo( this.$el )
-                .css('margin-left', - this.$indicator.width()/2);
-
-            this.$indicator
+                .css('margin-left', - this.$indicator.width()/2)
                 .delegate('.dot','click', $.proxy(this.onIndicatorClick, this));
         },
 
@@ -89,7 +99,7 @@ $(function () {
                 this.currentIndex = this.$slides.length - 1;
             }
 
-            this.$list
+            this.$el
                 .stop(true)
                 .animate({
                     'left': -(this.currentIndex * this.$el.width())

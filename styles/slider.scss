@@ -1,24 +1,22 @@
 @import "compass";
 
-.mega_slider {
+.mega-slider {
+    width: 100%;
+    height: 100%;
     overflow: hidden;
+    white-space: nowrap;
     position: relative;
-    &>ul {
-        position: relative;
-        margin:0;
-        padding: 0;
-        list-style: none;
-        
-        .slides{
-            float:left;
-            display: block;            
-        }
 
-        &>li {
-            float:left;
-            display: block;
-        }
+    &>.mega-slide{
+        display: inline-block;
     }
+
+    .mega-slide-element {
+        display: inline-block;
+        @include clearfix;
+    }
+
+
 
     &>.indicator{
         bottom: 0;
