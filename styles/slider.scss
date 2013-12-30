@@ -8,6 +8,7 @@
     position: relative;
 
     &>.mega-slide{
+        position: relative;
         display: inline-block;
     }
 
@@ -15,24 +16,22 @@
         display: inline-block;
         @include clearfix;
     }
+}
 
-
-
-    &>.indicator{
-        bottom: 0;
-        left: 50%;
-        position: absolute;
-        z-index: 300;
-        &>.dot {
-            cursor:pointer;
-            background:url('../img/indicator.png') no-repeat;
-            width: 15px;
-            height: 15px;
-            margin-left: 3px;
-            float: left;
-            &.filled {
-                background:url('../img/indicator.png') -15px 0px no-repeat;
-            }
+.indicator{
+    bottom: 0;
+    left: 50%;
+    z-index: 300;
+    position: absolute;
+    &>.dot {
+        cursor:pointer;
+        background:url('../img/indicator.png') no-repeat;
+        width: 15px;
+        height: 15px;
+        margin-left: 3px;
+        float: left;
+        &.filled {
+            background:url('../img/indicator.png') -15px 0px no-repeat;
         }
     }
 }
